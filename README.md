@@ -1,7 +1,9 @@
 ## Bug Description
 
+When adding those dependencies in the same project
 
-when adding those dependencies `org.springframework.boot:spring-boot-starter-oauth2-client` with `org.springframework.cloud:spring-cloud-starter-gateway` 
+- `org.springframework.boot:spring-boot-starter-oauth2-client`
+- `org.springframework.cloud:spring-cloud-starter-gateway`
 
 any filter that changes request header like `AddRequestHeader` will not work and throw this Exception
 
@@ -228,3 +230,7 @@ any filter that changes request header like `AddRequestHeader` will not work and
     at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
     at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
 
+### steps to produce it
+
+- run the application using `gradle bootRun`
+- access this endpoint `http://localhost:8080/example`
