@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: headers-bug
+  cloud:
+    gateway:
+      routes:
+        - id: add_request_header_route
+          uri: https://example.org
+          filters:
+            - AddRequestHeader=X-Request-red, blue
+          predicates:
+            - Path=/example
